@@ -16,6 +16,12 @@ When this layer is used, dbt-mode is enabled for sql files in a dbt project.
 
 * Install
 
+Add this layer to your =~/.emacs.d/private/= directory. For example, using git:
+
+#+BEGIN_SRC shell
+  git clone https://github.com/mprentice/spacemacs-dbt.git ~/.emacs.d/private/dbt
+#+END_SRC
+
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
 add =dbt= to the existing =dotspacemacs-configuration-layers= list in this
 file.

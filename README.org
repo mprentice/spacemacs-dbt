@@ -1,0 +1,21 @@
+#+TITLE: dbt layer
+#+AUTHOR: Data Mike
+#+EMAIL: mjp35@cornell.edu
+#+TAGS: layer|programming|dsl
+
+# TOC links should be GitHub style anchors.
+* Table of Contents                                        :TOC_4_gh:noexport:
+- [[#description][Description]]
+- [[#install][Install]]
+
+* Description
+
+This layer adds support for dbt-mode using polymode in dbt projects.
+
+When this layer is used, dbt-mode is enabled for sql files in a dbt project.
+
+* Install
+
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =dbt= to the existing =dotspacemacs-configuration-layers= list in this
+file.

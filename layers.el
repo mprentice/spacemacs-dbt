@@ -20,5 +20,12 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-;; dbt-mode depends on sql-mode and dbt layer depends on sql layer
-(configuration-layer/declare-layer-dependencies '(sql))
+;; Dependencies:
+;; - dbt-mode depends on sql-mode
+;;   - dbt layer depends on sql layer
+;; - dbt-mode depends on jinja2-mode
+;;   - dbt layer depends on ansible layer
+;; - dbt-mode depends on polymode
+;;   - Not in spacemacs yet; see dbt layer packages.el
+(configuration-layer/declare-layer-dependencies '(sql
+                                                  ansible))

@@ -41,7 +41,8 @@
 ;;; Code:
 
 (defconst dbt-packages
-  '((dbt-mode
+  '(polymode
+    (dbt-mode
      :location (recipe
                 :fetcher github
                 :repo "CyberShadow/dbt-mode")))
@@ -73,10 +74,18 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 (defun dbt/init-dbt-mode ()
-  (use-package dbt-mode)
+  (use-package dbt-mode
+    :defer t
+    :after (sql jinja2-mode polymode))
   (add-to-list 'magic-mode-alist '(dbt/sql-file-p . dbt-mode)))
 
+(defun dbt/init-polymode ()
+  (use-package polymode
+    :defer t))
+
 (defun dbt/sql-file-p ()
+  "Returns non-nil if current buffer is a sql file in a dbt project."
+  (interactive)
   (and
    (string-suffix-p ".sql" (downcase (buffer-file-name)))
    (locate-dominating-file (file-name-directory (buffer-file-name))
